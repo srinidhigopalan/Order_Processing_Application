@@ -55,11 +55,13 @@ This command runs the Docker container named myapp-container, mounts the orders.
 
 ### Building and Running the Tests
 1. Build the Docker Image for Tests
+docker build -t myapp .
 docker build -t myapp-tests -f Dockerfile-tests .
 This command builds a Docker image named myapp-tests using the Dockerfile-tests.
 
 
-2. Run the Tests
+3. Run the Tests
+docker run --name myapp-container myapp
 docker run --name myapp-tests-container myapp-tests
 This command runs the Docker container named myapp-tests-container and executes the test.py script. The --name flag gives the container a name for easy reference.
 
