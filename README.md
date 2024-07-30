@@ -42,36 +42,37 @@ README.md: This file. It provides an overview of the project, setup instructions
 
 Ensure Docker is installed on your system. You can follow the instructions on Docker's website to install Docker.
 
-### Building and Running the Application
+### Building and Running the Application and Tests
 
 1. Build the Docker Image for the Application
+   
 docker build -t myapp .
+
+docker build -t myapp-tests -f Dockerfile-tests .
+
 This command builds a Docker image named myapp using the Dockerfile.
 
-2. Run the Application
-docker run --name myapp-container -v $(pwd)/orders.csv:/app/orders.csv myapp
+3. Run the Application
+   
+docker run --name myapp-container myapp
+
+docker run --name myapp-tests-container myapp-tests
 
 This command runs the Docker container named myapp-container, mounts the orders.csv file into the container, and executes the main.py script. The --name flag gives the container a name for easy reference.
 
-### Building and Running the Tests
-1. Build the Docker Image for Tests
-docker build -t myapp .
-docker build -t myapp-tests -f Dockerfile-tests .
-This command builds a Docker image named myapp-tests using the Dockerfile-tests.
-
-
-3. Run the Tests
-docker run --name myapp-container myapp
-docker run --name myapp-tests-container myapp-tests
-This command runs the Docker container named myapp-tests-container and executes the test.py script. The --name flag gives the container a name for easy reference.
 
 ### Stopping and Removing Containers
+
 To stop and remove the containers after running them:
 
 1. Remove the Application Container
+   
 docker rm myapp-container
+
 This command removes the myapp-container after it has stopped.
 
-2. Remove the Test Container
+3. Remove the Test Container
+   
 docker rm myapp-tests-container
+
 This command removes the myapp-tests-container after it has stopped.
