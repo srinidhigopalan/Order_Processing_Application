@@ -1,18 +1,27 @@
-Order Processing Application
+# Order Processing Application
 
 This project processes order data to compute various revenue metrics and validates the processing logic using unit tests. Docker is used for containerization, ensuring a consistent environment for running the application and tests.
 
-File Structure
+## File Structure
+
 /
+
 ├── Dockerfile
+
 ├── Dockerfile-tests
+
 ├── main.py
+
 ├── test.py
+
 ├── requirements.txt
+
 ├── orders.csv
+
 └── README.md
 
-File Descriptions
+## File Descriptions
+
 main.py: Contains the main code for processing order data. This script reads data from orders.csv, computes revenue metrics, and prints the results.
 
 test.py: Contains unit tests that verify the correctness of the data processing logic implemented in main.py. It uses the unittest framework to ensure the application behaves as expected.
@@ -27,11 +36,14 @@ orders.csv: Contains sample order data used for running the application and perf
 
 README.md: This file. It provides an overview of the project, setup instructions, and details about each file.
 
-Setup
-Prerequisites
+## Setup
+
+### Prerequisites
+
 Ensure Docker is installed on your system. You can follow the instructions on Docker's website to install Docker.
 
-Building and Running the Application
+### Building and Running the Application
+
 1. Build the Docker Image for the Application
 docker build -t myapp .
 This command builds a Docker image named myapp using the Dockerfile.
@@ -41,7 +53,7 @@ docker run --name myapp-container -v $(pwd)/orders.csv:/app/orders.csv myapp
 
 This command runs the Docker container named myapp-container, mounts the orders.csv file into the container, and executes the main.py script. The --name flag gives the container a name for easy reference.
 
-Building and Running the Tests
+###Building and Running the Tests
 1. Build the Docker Image for Tests
 docker build -t myapp-tests -f Dockerfile-tests .
 This command builds a Docker image named myapp-tests using the Dockerfile-tests.
@@ -51,7 +63,7 @@ This command builds a Docker image named myapp-tests using the Dockerfile-tests.
 docker run --name myapp-tests-container myapp-tests
 This command runs the Docker container named myapp-tests-container and executes the test.py script. The --name flag gives the container a name for easy reference.
 
-Stopping and Removing Containers
+###Stopping and Removing Containers
 To stop and remove the containers after running them:
 
 1. Remove the Application Container
