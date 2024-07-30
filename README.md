@@ -52,7 +52,7 @@ docker build -t myapp-tests -f Dockerfile-tests .
 
 This command builds a Docker image named myapp using the Dockerfile.
 
-3. Run the Application
+2. Run the Application
    
 docker run --name myapp-container myapp
 
@@ -71,7 +71,7 @@ docker rm myapp-container
 
 This command removes the myapp-container after it has stopped.
 
-3. Remove the Test Container
+2. Remove the Test Container
    
 docker rm myapp-tests-container
 
