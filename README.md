@@ -53,7 +53,7 @@ docker run --name myapp-container -v $(pwd)/orders.csv:/app/orders.csv myapp
 
 This command runs the Docker container named myapp-container, mounts the orders.csv file into the container, and executes the main.py script. The --name flag gives the container a name for easy reference.
 
-###Building and Running the Tests
+### Building and Running the Tests
 1. Build the Docker Image for Tests
 docker build -t myapp-tests -f Dockerfile-tests .
 This command builds a Docker image named myapp-tests using the Dockerfile-tests.
@@ -63,7 +63,7 @@ This command builds a Docker image named myapp-tests using the Dockerfile-tests.
 docker run --name myapp-tests-container myapp-tests
 This command runs the Docker container named myapp-tests-container and executes the test.py script. The --name flag gives the container a name for easy reference.
 
-###Stopping and Removing Containers
+### Stopping and Removing Containers
 To stop and remove the containers after running them:
 
 1. Remove the Application Container
